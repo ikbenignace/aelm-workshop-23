@@ -10,6 +10,7 @@ on:
 env:
   DOCKER_IMAGE: aelm-workshop-23
   GOLANG_VERSION: 1.21.x
+  REGISTRY: ghcr.io
 
 jobs:
   build:
@@ -63,7 +64,7 @@ jobs:
   #         push: true
   #         tags: ${{ steps.meta.outputs.tags }}
 
-  build-and-push-image:
+  docker:
     needs: build
     runs-on: ubuntu-latest
     permissions:
